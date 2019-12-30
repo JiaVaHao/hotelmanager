@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8854DCB7-F2D7-4276-8D10-C7A124436145}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotelManagerSystem</RootNamespace>
+    <AssemblyName>酒店管理系统pro版</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hotel_128px_1221651_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="microsoft.office.interop.excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\mexceldll\14.0.4756.1000\microsoft.office.interop.excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hotelmanagerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotelmanagerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\CheckInfoService.cs" />
+    <Compile Include="BLL\CustoService.cs" />
+    <Compile Include="DAL\CustoTypeDao.cs" />
+    <Compile Include="DAL\FontsDao.cs" />
+    <Compile Include="BLL\OperationService.cs" />
+    <Compile Include="BLL\RoomService.cs" />
+    <Compile Include="BLL\RoomTypeService.cs" />
+    <Compile Include="BLL\SpendService.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CheckInfoDao.cs" />
+    <Compile Include="DAL\OperationDao.cs" />
+    <Compile Include="DAL\ReserDao.cs" />
+    <Compile Include="DAL\CustoDao.cs" />
+    <Compile Include="DAL\RoomTypeDao.cs" />
+    <Compile Include="DAL\SpendDao.cs" />
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DAL\RoomDao.cs" />
+    <Compile Include="FrmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAboutUs.Designer.cs">
+      <DependentUpon>FrmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckIn.Designer.cs">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckOutForm.Designer.cs">
+      <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperation.Designer.cs">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRoomStateManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoomStateManager.Designer.cs">
+      <DependentUpon>FrmRoomStateManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectCustoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectCustoInfo.Designer.cs">
+      <DependentUpon>FrmSelectCustoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerManager.Designer.cs">
+      <DependentUpon>FrmCustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReserManager.Designer.cs">
+      <DependentUpon>FrmReserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoomManager.Designer.cs">
+      <DependentUpon>FrmRoomManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CheckInfo.cs" />
+    <Compile Include="Model\CustoType.cs" />
+    <Compile Include="Model\Fonts.cs" />
+    <Compile Include="Model\OperationLog.cs" />
+    <Compile Include="Model\Reser.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\RoomStatic.cs" />
+    <Compile Include="Model\RoomType.cs" />
+    <Compile Include="Model\Custo.cs" />
+    <Compile Include="Model\Spend.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucRoomList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRoomList.Designer.cs">
+      <DependentUpon>ucRoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpendLog.cs" />
+    <EmbeddedResource Include="FrmAboutUs.resx">
+      <DependentUpon>FrmAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckIn.resx">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckOutForm.resx">
+      <DependentUpon>FrmCheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoomStateManager.resx">
+      <DependentUpon>FrmRoomStateManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectCustoInfo.resx">
+      <DependentUpon>FrmSelectCustoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerManager.resx">
+      <DependentUpon>FrmCustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReserManager.resx">
+      <DependentUpon>FrmReserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoomManager.resx">
+      <DependentUpon>FrmRoomManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRoomList.resx">
+      <DependentUpon>ucRoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="hotelmanagerDataSet.xsc">
+      <DependentUpon>hotelmanagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hotelmanagerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotelmanagerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotelmanagerDataSet.xss">
+      <DependentUpon>hotelmanagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\客房管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\客房管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\用户管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\用户管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\房卡管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\房卡管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\客房管理-ia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\客房管理-ib1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\消费管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\消费管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\用户管理-ia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\用户管理-ib1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\预约管理-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\预约管理-ib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\delete2a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\搜索--1a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\添 加a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\修改a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\delete2-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\搜索--1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\添 加-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\修改.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Login_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Login_a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Login_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Login_b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\显示.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\隐藏.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\空房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\清理中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\维修中.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\已入住.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\脏房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\空房22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\可住房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\清理中2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\已住房.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\脏房2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\获取用户编号.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\获取用户编号-ia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\预约管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\预约管理-aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\维修中1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\维修中22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hotel_128px_1221651_easyicon.net.ico" />
+    <None Include="resources\zhifubao.png" />
+    <None Include="resources\wechat.png" />
+    <None Include="resources\log1.png" />
+    <None Include="resources\log.png" />
+    <None Include="resources\维修中221.png" />
+    <None Include="resources\维修中2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
